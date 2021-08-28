@@ -14,12 +14,15 @@ const weatherLoad = () =>{
 const weatherDisplay = (weather, city) =>{
     const weatherDisplayField = document.getElementById('wather-display');
     weatherDisplayField.textContent = '';
+    const tempFloat = parseFloat(weather.main.temp)-273.15;
+    const temp = Math.ceil(tempFloat);
+    console.log(temp);
 
     const div = document.createElement('div');
     div.classList.add('text-center','text-white');
     div.innerHTML= `
       <h3 class="fs-1 text-capitalize">${city}</h3>
-      <h3 class="fs-3">${weather.wind.deg}°F</h3>
+      <h3 class="fs-3">${temp}°C</h3>
       <p class="fs-5">${weather.weather[0].main}</p>
     `
     weatherDisplayField.appendChild(div);
