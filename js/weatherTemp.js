@@ -3,7 +3,7 @@ const weatherLoad = () =>{
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     // api connection
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=075a7af654343d5a13026226dc0a891b`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchText}&appid=075a7af654343d5a13026226dc0a891b`)
     .then(response => response.json())
     .then(data => weatherDisplay(data,searchText))
     .catch(error => errorDisplay());
