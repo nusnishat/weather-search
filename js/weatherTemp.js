@@ -21,6 +21,7 @@ const weatherDisplay = (weather, city) =>{
     const div = document.createElement('div');
     div.classList.add('text-center','text-white');
     div.innerHTML= `
+      <img src="http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png" alt="">
       <h3 class="fs-1 text-capitalize">${city}</h3>
       <h3 class="fs-3">${temp}°C</h3>
       <p class="fs-5">${weather.weather[0].main}</p>
